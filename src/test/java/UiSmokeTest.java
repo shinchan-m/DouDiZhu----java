@@ -3,9 +3,14 @@ import com.itheima.game.LoginJFrame;
 
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
+import java.awt.GraphicsEnvironment;
 
 public class UiSmokeTest {
     public static void main(String[] args) throws Exception {
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("UiSmokeTest skipped: headless environment");
+            return;
+        }
         SwingUtilities.invokeAndWait(() -> {
             LoginJFrame login = new LoginJFrame();
             login.dispose();

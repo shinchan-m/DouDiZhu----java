@@ -1,11 +1,16 @@
 import com.itheima.game.GameJFrame;
 
 import javax.swing.SwingUtilities;
+import java.awt.GraphicsEnvironment;
 import java.lang.reflect.Method;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CountdownSmokeTest {
     public static void main(String[] args) throws Exception {
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("CountdownSmokeTest skipped: headless environment");
+            return;
+        }
         System.setProperty("doudizhu.test.autoClose", "true");
         GameJFrame[] frameHolder = new GameJFrame[1];
         SwingUtilities.invokeAndWait(() -> frameHolder[0] = new GameJFrame("countdown_test"));

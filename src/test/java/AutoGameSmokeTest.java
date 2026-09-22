@@ -5,10 +5,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.awt.GraphicsEnvironment;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class AutoGameSmokeTest {
     public static void main(String[] args) throws Exception {
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("AutoGameSmokeTest skipped: headless environment");
+            return;
+        }
         System.setProperty("doudizhu.test.autoClose", "true");
         Difficulty difficulty = args.length == 0
                 ? Difficulty.MEDIUM

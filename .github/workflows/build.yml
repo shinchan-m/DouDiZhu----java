@@ -22,5 +22,4 @@ jobs:
           java -cp "target/test-classes:target/doudizhu.jar" AIResponseParserTest
           java -cp "target/test-classes:target/doudizhu.jar" CodeUtilTest
           java -cp "target/test-classes:target/doudizhu.jar" UserStoreTest
-          java -cp "target/test-classes:target/doudizhu.jar" CountdownSmokeTest
           java -cp "target/test-classes:target/doudizhu.jar" PokerOrderTest

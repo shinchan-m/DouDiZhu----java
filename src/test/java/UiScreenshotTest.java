@@ -5,11 +5,16 @@ import javax.imageio.ImageIO;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Robot;
+import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class UiScreenshotTest {
     public static void main(String[] args) throws Exception {
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("UiScreenshotTest skipped: headless environment");
+            return;
+        }
         Robot robot = new Robot();
         File outputDir = new File("work/screenshots");
         if (!outputDir.exists() && !outputDir.mkdirs()) {
