@@ -1,0 +1,13 @@
+/out/
+/out-test/
+/work/
+/target/
+/.idea/
+*.iml
+/lib/
+/data/
+*.key
+*.pem
+.env
+.env.*
+!.env.example
